@@ -31,7 +31,20 @@ var exactVersionPattern = regexp.MustCompile(`^\d+\.\d+\.\d+\.\d+$`)
 //   - 精确版本号，如 "131.0.6778.85"：直接使用
 //
 // 下载产物缓存在 %LOCALAPPDATA%\ruyipage\chromedriver\{version}\chromedriver.exe。
+// 非精确版本的解析结果会缓存到 %LOCALAPPDATA%\ruyipage\chromedriver\_resolved\{key}.txt，
+// 命中缓存且本地驱动仍在时可直接复用，避免重复请求 Chrome for Testing。
 func EnsureChromedriver(version string) (string, error) {
+	trimmed := strings.TrimSpace(version)
+	isExact := exactVersionPattern.MatchString(trimmed)
+
+	if !isExact {
+		if cached, ok := lookupCachedResolvedVersion(version); ok {
+			if driverPath, ok := existingChromedriver(cached); ok {
+				return driverPath, nil
+			}
+		}
+	}
+
 	exactVersion, err := resolveChromedriverVersion(version)
 	if err != nil {
 		return "", err
@@ -43,6 +56,9 @@ func EnsureChromedriver(version string) (string, error) {
 	}
 	driverPath := filepath.Join(cacheDir, "chromedriver.exe")
 	if stat, err := os.Stat(driverPath); err == nil && stat.Size() > 0 {
+		if !isExact {
+			_ = storeCachedResolvedVersion(version, exactVersion)
+		}
 		return driverPath, nil
 	}
 
@@ -67,7 +83,70 @@ func EnsureChromedriver(version string) (string, error) {
 		_ = os.Remove(driverPath)
 		return "", support.NewBrowserLaunchError("解压 chromedriver.exe 失败", err)
 	}
+	if !isExact {
+		_ = storeCachedResolvedVersion(version, exactVersion)
+	}
 	return driverPath, nil
+}
+
+func existingChromedriver(exactVersion string) (string, bool) {
+	cacheDir, err := chromedriverCacheDir(exactVersion)
+	if err != nil {
+		return "", false
+	}
+	driverPath := filepath.Join(cacheDir, "chromedriver.exe")
+	stat, err := os.Stat(driverPath)
+	if err != nil || stat.Size() == 0 {
+		return "", false
+	}
+	return driverPath, true
+}
+
+func resolvedVersionCacheKey(version string) string {
+	key := strings.ToLower(strings.TrimSpace(version))
+	if key == "" || key == "latest" {
+		key = "stable"
+	}
+	return key
+}
+
+func resolvedVersionCachePath(version string) (string, error) {
+	base := os.Getenv("LOCALAPPDATA")
+	if strings.TrimSpace(base) == "" {
+		home, err := os.UserHomeDir()
+		if err != nil {
+			return "", support.NewBrowserLaunchError("获取用户目录失败", err)
+		}
+		base = filepath.Join(home, "AppData", "Local")
+	}
+	return filepath.Join(base, "ruyipage", "chromedriver", "_resolved", resolvedVersionCacheKey(version)+".txt"), nil
+}
+
+func lookupCachedResolvedVersion(version string) (string, bool) {
+	path, err := resolvedVersionCachePath(version)
+	if err != nil {
+		return "", false
+	}
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return "", false
+	}
+	resolved := strings.TrimSpace(string(data))
+	if !exactVersionPattern.MatchString(resolved) {
+		return "", false
+	}
+	return resolved, true
+}
+
+func storeCachedResolvedVersion(version, resolved string) error {
+	path, err := resolvedVersionCachePath(version)
+	if err != nil {
+		return err
+	}
+	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+		return err
+	}
+	return os.WriteFile(path, []byte(resolved), 0o644)
 }
 
 func resolveChromedriverVersion(version string) (string, error) {
