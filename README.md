@@ -6,7 +6,7 @@
 
 ## 仓库关系
 
-- Go 实现：<https://github.com/pll177/ruyipage-go>
+- Go 实现：<https://github.com/misslng/ruyipage-go>
 - Python 基线：<https://github.com/LoseNine/ruyipage>
 
 `ruyipage-go` 延续了 `ruyiPage` 的 Firefox + BiDi 路线，并在 Go 侧暴露了一组高层对象：
@@ -49,7 +49,7 @@
 新安装、老项目升级都统一执行这一组命令：
 
 ```bash
-go get github.com/pll177/ruyipage-go@v1.1.10
+go get github.com/misslng/ruyipage-go@v1.1.10
 go mod tidy
 ```
 
@@ -143,20 +143,20 @@ opts.WithProxy("http://proxy.example.com:7878")
 ### 安装
 
 ```bash
-go get github.com/pll177/ruyipage-go@v1.1.10
+go get github.com/misslng/ruyipage-go@v1.1.10
 go mod tidy
 ```
 
 导入方式：
 
 ```go
-import ruyipage "github.com/pll177/ruyipage-go"
+import ruyipage "github.com/misslng/ruyipage-go"
 ```
 
 安装后可确认模块版本：
 
 ```bash
-go list -m github.com/pll177/ruyipage-go
+go list -m github.com/misslng/ruyipage-go
 ```
 
 ### 环境要求
@@ -193,7 +193,7 @@ import (
 	"fmt"
 	"time"
 
-	ruyipage "github.com/pll177/ruyipage-go"
+	ruyipage "github.com/misslng/ruyipage-go"
 )
 
 func main() {
@@ -256,7 +256,7 @@ package main
 import (
 	"fmt"
 
-	ruyipage "github.com/pll177/ruyipage-go"
+	ruyipage "github.com/misslng/ruyipage-go"
 )
 
 func main() {
@@ -301,7 +301,7 @@ package main
 import (
 	"fmt"
 
-	ruyipage "github.com/pll177/ruyipage-go"
+	ruyipage "github.com/misslng/ruyipage-go"
 )
 
 func main() {
@@ -348,7 +348,7 @@ func main() {
 ```go
 package main
 
-import ruyipage "github.com/pll177/ruyipage-go"
+import ruyipage "github.com/misslng/ruyipage-go"
 
 func main() {
 	// 方式一：配置对象

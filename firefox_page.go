@@ -5,9 +5,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pll177/ruyipage-go/internal/config"
-	internalpages "github.com/pll177/ruyipage-go/internal/pages"
-	"github.com/pll177/ruyipage-go/internal/support"
+	"github.com/misslng/ruyipage-go/internal/config"
+	internalpages "github.com/misslng/ruyipage-go/internal/pages"
+	"github.com/misslng/ruyipage-go/internal/support"
 )
 
 var (

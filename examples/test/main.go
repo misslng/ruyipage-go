@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	ruyipage "github.com/pll177/ruyipage-go"
+	ruyipage "github.com/misslng/ruyipage-go"
 )
 
 func main() {

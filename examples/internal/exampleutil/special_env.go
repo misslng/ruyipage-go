@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	ruyipage "github.com/pll177/ruyipage-go"
+	ruyipage "github.com/misslng/ruyipage-go"
 )
 
 const (

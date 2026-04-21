@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	ruyipage "github.com/pll177/ruyipage-go"
-	"github.com/pll177/ruyipage-go/examples/internal/exampleutil"
+	ruyipage "github.com/misslng/ruyipage-go"
+	"github.com/misslng/ruyipage-go/examples/internal/exampleutil"
 )
 
 // 示例47：自动下载 chromedriver 并接管一个已经用 --remote-debugging-port 启动的 Chrome。

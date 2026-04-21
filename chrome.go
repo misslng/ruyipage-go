@@ -6,11 +6,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pll177/ruyipage-go/internal/adapter"
-	"github.com/pll177/ruyipage-go/internal/base"
-	internalbrowser "github.com/pll177/ruyipage-go/internal/browser"
-	internalpages "github.com/pll177/ruyipage-go/internal/pages"
-	"github.com/pll177/ruyipage-go/internal/support"
+	"github.com/misslng/ruyipage-go/internal/adapter"
+	"github.com/misslng/ruyipage-go/internal/base"
+	internalbrowser "github.com/misslng/ruyipage-go/internal/browser"
+	internalpages "github.com/misslng/ruyipage-go/internal/pages"
+	"github.com/misslng/ruyipage-go/internal/support"
 )
 
 // ChromeOptions 是 Chrome 启动的最小公开配置。

@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pll177/ruyipage-go/internal/browser"
-	"github.com/pll177/ruyipage-go/internal/config"
-	"github.com/pll177/ruyipage-go/internal/support"
+	"github.com/misslng/ruyipage-go/internal/browser"
+	"github.com/misslng/ruyipage-go/internal/config"
+	"github.com/misslng/ruyipage-go/internal/support"
 )
 
 // FirefoxPage 是顶层页面入口，承接浏览器对象和默认 tab 语义。

@@ -11,12 +11,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pll177/ruyipage-go/internal/base"
-	"github.com/pll177/ruyipage-go/internal/bidi"
-	"github.com/pll177/ruyipage-go/internal/config"
-	"github.com/pll177/ruyipage-go/internal/elements"
-	"github.com/pll177/ruyipage-go/internal/support"
-	"github.com/pll177/ruyipage-go/internal/units"
+	"github.com/misslng/ruyipage-go/internal/base"
+	"github.com/misslng/ruyipage-go/internal/bidi"
+	"github.com/misslng/ruyipage-go/internal/config"
+	"github.com/misslng/ruyipage-go/internal/elements"
+	"github.com/misslng/ruyipage-go/internal/support"
+	"github.com/misslng/ruyipage-go/internal/units"
 )
 
 const (

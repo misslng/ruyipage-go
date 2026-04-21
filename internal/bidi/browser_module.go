@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/pll177/ruyipage-go/internal/support"
+	"github.com/misslng/ruyipage-go/internal/support"
 )
 
 type browserCommandDriver interface {

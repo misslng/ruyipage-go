@@ -13,7 +13,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/pll177/ruyipage-go/internal/support"
+	"github.com/misslng/ruyipage-go/internal/support"
 )
 
 // ChromeDriverSession 描述一次 chromedriver + W3C session 启动结果。

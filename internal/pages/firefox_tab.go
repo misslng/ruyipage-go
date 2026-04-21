@@ -3,8 +3,8 @@ package pages
 import (
 	"time"
 
-	"github.com/pll177/ruyipage-go/internal/browser"
-	"github.com/pll177/ruyipage-go/internal/support"
+	"github.com/misslng/ruyipage-go/internal/browser"
+	"github.com/misslng/ruyipage-go/internal/support"
 )
 
 // FirefoxTab 是最小可用标签页对象，供 FirefoxPage 直接返回。

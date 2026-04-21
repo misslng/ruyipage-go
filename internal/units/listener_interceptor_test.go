@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/pll177/ruyipage-go/internal/base"
+	"github.com/misslng/ruyipage-go/internal/base"
 )
 
 type testNetworkOwner struct {

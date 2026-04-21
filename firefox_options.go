@@ -1,6 +1,6 @@
 package ruyipage
 
-import "github.com/pll177/ruyipage-go/internal/config"
+import "github.com/misslng/ruyipage-go/internal/config"
 
 type (
 	// FirefoxLoadMode 表示页面加载等待模式。

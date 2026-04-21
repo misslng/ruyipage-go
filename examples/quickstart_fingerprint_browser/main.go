@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	ruyipage "github.com/pll177/ruyipage-go"
-	"github.com/pll177/ruyipage-go/examples/internal/exampleutil"
+	ruyipage "github.com/misslng/ruyipage-go"
+	"github.com/misslng/ruyipage-go/examples/internal/exampleutil"
 )
 
 func main() {

@@ -9,7 +9,7 @@ import (
 
 	"github.com/gorilla/websocket"
 
-	"github.com/pll177/ruyipage-go/internal/support"
+	"github.com/misslng/ruyipage-go/internal/support"
 )
 
 const (

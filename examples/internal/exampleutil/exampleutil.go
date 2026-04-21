@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	ruyipage "github.com/pll177/ruyipage-go"
+	ruyipage "github.com/misslng/ruyipage-go"
 )
 
 const (

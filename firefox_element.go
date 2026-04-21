@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	internalelements "github.com/pll177/ruyipage-go/internal/elements"
+	internalelements "github.com/misslng/ruyipage-go/internal/elements"
 )
 
 // FirefoxElement 是动态元素公开包装对象。

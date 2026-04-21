@@ -4,7 +4,7 @@ import (
 	"sort"
 	"sync"
 
-	"github.com/pll177/ruyipage-go/internal/bidi"
+	"github.com/misslng/ruyipage-go/internal/bidi"
 )
 
 // RealmTracker 提供 realm 生命周期跟踪能力。

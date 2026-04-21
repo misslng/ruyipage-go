@@ -7,8 +7,8 @@ import (
 	"github.com/antchfx/htmlquery"
 	"golang.org/x/net/html"
 
-	"github.com/pll177/ruyipage-go/internal/base"
-	"github.com/pll177/ruyipage-go/internal/support"
+	"github.com/misslng/ruyipage-go/internal/base"
+	"github.com/misslng/ruyipage-go/internal/support"
 )
 
 // StaticNode 表示静态 HTML 解析后的节点统一读取接口。

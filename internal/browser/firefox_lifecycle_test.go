@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/pll177/ruyipage-go/internal/config"
+	"github.com/misslng/ruyipage-go/internal/config"
 )
 
 func TestFirefoxQuitCleansManagedFPFile(t *testing.T) {

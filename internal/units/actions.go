@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pll177/ruyipage-go/internal/base"
-	"github.com/pll177/ruyipage-go/internal/bidi"
+	"github.com/misslng/ruyipage-go/internal/base"
+	"github.com/misslng/ruyipage-go/internal/bidi"
 )
 
 type actionsOwner interface {

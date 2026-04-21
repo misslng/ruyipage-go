@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	internalbrowser "github.com/pll177/ruyipage-go/internal/browser"
-	internalpages "github.com/pll177/ruyipage-go/internal/pages"
-	"github.com/pll177/ruyipage-go/internal/support"
+	internalbrowser "github.com/misslng/ruyipage-go/internal/browser"
+	internalpages "github.com/misslng/ruyipage-go/internal/pages"
+	"github.com/misslng/ruyipage-go/internal/support"
 )
 
 const (

@@ -4,8 +4,8 @@ import (
 	"os/exec"
 	"time"
 
-	internalbrowser "github.com/pll177/ruyipage-go/internal/browser"
-	"github.com/pll177/ruyipage-go/internal/config"
+	internalbrowser "github.com/misslng/ruyipage-go/internal/browser"
+	"github.com/misslng/ruyipage-go/internal/config"
 )
 
 // Firefox 是公开浏览器生命周期对象。
